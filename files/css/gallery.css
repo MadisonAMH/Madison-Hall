@@ -1,0 +1,103 @@
+/* CSS for the gallery section */
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+/* CSS for the image container */
+.image-container {
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Add a light gray shadow */
+    border-radius: 8px; /* Rounded corners for a softer look */
+    margin-bottom: 20px; /* Add some space between images */
+    width: calc(33.33% - 10px); /* Set width to one-third of the container minus margin */
+    margin-bottom: 20px; /* Add bottom margin to create gap between rows */
+    box-sizing: border-box; /* Include padding and border in the width */
+    display: flex; /* Use flexbox for alignment */
+    flex-direction: column; /* Align items vertically */
+    justify-content: space-between; /* Evenly distribute space between items */
+}
+
+/* CSS for the image text */
+.image-text {
+    padding: 20px;
+    width: calc(100% - 40px); /* Fill out the entire width of the container */
+    text-align: left; /* Align text to the left */
+    font-size: 16px; /* Increased font size */
+    color: #333; /* Dark gray text color */
+    max-width: 400px; /* Limit the width to prevent sentences from being too long */
+    margin-top: auto; /* Align text to the bottom of the container */
+}
+
+/* CSS for the image title */
+.image-text h3 {
+    font-weight: bold;
+    font-style: italic;
+    font-size: 20px; /* Adjusted font size */
+    margin-bottom: 10px; /* Add some space below the title */
+}
+
+/* CSS for the image description */
+.image-text p {
+    margin: 0; /* Remove default margin */
+    font-size: 14px; /* Adjusted font size */
+}
+
+/* Title style */
+h3 {
+    font-weight: bold;
+    font-style: italic;
+}
+
+/* Material list style */
+p.material-list {
+    font-weight: normal;
+    font-size: 14px; /* Adjusted font size */
+}
+
+/* Date style */
+p.date {
+    font-weight: normal;
+    margin-top: 0; /* Remove default margin from the top */
+    font-size: 14px; /* Adjusted font size */
+}
+
+.container {
+    background-color: #ffffff; /* Blue background color */
+}
+
+.nav-container {
+    position: sticky; /* Make the navigation container sticky */
+    top: 0; /* Stick it to the top of the viewport */
+    width: 200px; /* Adjust the width of the navigation container */
+    padding: 20px;
+}
+
+.logo {
+    font-size: 24px;
+    margin: 0;
+}
+
+.nav-links {
+    list-style: none;
+    padding: 0;
+}
+
+.nav-links li {
+    margin-bottom: 10px;
+}
+
+.nav-links li a {
+    color: black;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.nav-links li a:hover {
+    border-bottom: 2px solid black;
+}
+
+.content {
+    flex: 1;
+    padding: 20px;
+}

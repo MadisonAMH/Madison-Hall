@@ -1,0 +1,70 @@
+/* Custom CSS */
+/* Remove enlarging effect */
+.main-image img:hover {
+    cursor: pointer; /* Change cursor to pointer */
+    filter: drop-shadow(0 0 5px rgba(0, 0, 255, 0.7)); /* Add slight glow effect */
+}
+.image-text {
+    text-align: center;
+    color: rgb(0, 0, 0);
+    margin-top: 10px;
+}
+
+/* CSS for image containers */
+.image-container {
+    width: 70%; /* Set width to 70% of the parent container */
+    height: auto; /* Maintain aspect ratio */
+    margin: 0 auto; /* Center the image container */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Add a light gray shadow */
+    border-radius: 8px; /* Rounded corners for a softer look */
+    box-sizing: border-box; /* Include padding and border in the width */
+    display: flex; /* Use flexbox for alignment */
+    flex-direction: column; /* Align items vertically */
+    justify-content: space-between; /* Evenly distribute space between items */
+}
+
+/* CSS for images */
+.image-container img {
+    width: 100%; /* Make the image fill out the container */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 8px; /* Rounded corners for a softer look */
+}
+
+/* CSS for image text */
+.image-text {
+    padding: 20px;
+    width: calc(100% - 40px); /* Fill out the entire width of the container */
+    text-align: left; /* Align text to the left */
+    font-size: 16px; /* Increased font size */
+    color: #333; /* Dark gray text color */
+    max-width: 400px; /* Limit the width to prevent sentences from being too long */
+    margin-top: auto; /* Align text to the bottom of the container */
+}
+
+.image-text h3 {
+    font-weight: bold;
+    font-style: italic;
+    font-size: 20px; /* Adjusted font size */
+    margin-bottom: 10px; /* Add some space below the title */
+}
+
+.image-text p {
+    margin: 10px 0; /* Add margin to the paragraphs */
+}
+
+/* Adjusted container styling */
+.content-container {
+    padding-left: 220px; /* Adjust padding to accommodate the side navigation bar */
+    padding-top: 20px; /* Add padding to the content area */
+    padding-right: 20px; /* Add padding to the content area */
+    padding-bottom: 20px; /* Add padding to the content area */
+    width: 100%; /* Make the content container fill the available width */
+    max-width: 1200px; /* Set maximum width for larger screens */
+    margin: 0 auto; /* Center the container horizontally */
+    display: flex; /* Use flexbox for alignment */
+    flex-direction: column; /* Stack children vertically */
+    align-items: center; /* Center items horizontally */
+    justify-content: center; /* Center items vertically */
+}
+
+/* Add more styling as needed */
