@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Works Page</title>
+    <link rel="stylesheet" type="text/css" href="css/side-navigation.css"> <!-- Link the side-navigation CSS file -->
+    <link rel="stylesheet" type="text/css" href="css/details.css"> <!-- Link the details CSS file -->
+    <style>
+        .content {
+            margin-left: 200px; /* Adjust margin to accommodate the side navigation bar */
+            padding: 20px; /* Add padding to the content area */
+        }
+
+        @media screen and (max-width: 600px) {
+            .content {
+                margin-left: 0; /* Remove left margin on smaller screens */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <div class="nav-container">
+                <h1 class="logo">Madison Hall</h1>
+                <ul class="nav-links">
+                    <li><a href="homepage.html">Home</a></li>
+                    <li><a href="works.html">Works</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+        <div class="content">
+            <!-- "Back" button -->
+            <button id="backBtn">Back</button>
+
+            <!-- Main Image Section -->
+            <div class="main-image">
+                <!-- Placeholder for the image -->
+                <div class="image-container">
+                    <img id="imageDisplay" alt="Image1">
+                </div>
+                <div class="image-container">
+                    <img id="imageDisplay2" alt="Image2" style="display: none;"> <!-- Add another image element -->
+                </div>
+                <div class="image-container">
+                    <img id="imageDisplay3" alt="Image3" style="display: none;"> <!-- Add another image element -->
+                </div>
+                <div class="image-container">
+                    <img id="imageDisplay4" alt="Image4" style="display: none;"> <!-- Add another image element -->
+                </div>
+                <div class="image-container">
+                    <img id="imageDisplay5" alt="Image5" style="display: none;"> <!-- Add another image element -->
+                </div>
+                <div class="image-container">
+                    <img id="imageDisplay6" alt="Image6" style="display: none;"> <!-- Add another image element -->
+                </div>
+                <!-- Text under images -->
+                <div id="imageText1" class="image-text">Remnant (pressured)</div>
+                <div id="imageText2" class="image-text" style="display: none;">Remnant (pressured)</div>
+                <div id="imageText3" class="image-text" style="display: none;">Remnant (pleading)</div>
+                <div id="imageText4" class="image-text" style="display: none;">Remnant (pleading)</div>
+                <div id="imageText5" class="image-text" style="display: none;">Remnant (polarized)</div>
+                <div id="imageText6" class="image-text" style="display: none;">Remnant (polarized)</div>
+                <!-- Navigation arrows -->
+                <button id="prevBtn">Previous</button>
+                <button id="nextBtn">Next</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Get the image elements
+        const imageDisplay = document.getElementById('imageDisplay');
+        const imageDisplay2 = document.getElementById('imageDisplay2');
+        const imageDisplay3 = document.getElementById('imageDisplay3');
+        const imageDisplay4 = document.getElementById('imageDisplay4');
+        const imageDisplay5 = document.getElementById('imageDisplay5');
+        const imageDisplay6 = document.getElementById('imageDisplay6');
+        const imageText1 = document.getElementById('imageText1');
+        const imageText2 = document.getElementById('imageText2');
+        const imageText3 = document.getElementById('imageText3');
+        const imageText4 = document.getElementById('imageText4');
+        const imageText5 = document.getElementById('imageText5');
+        const imageText6 = document.getElementById('imageText6');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        const backBtn = document.getElementById('backBtn'); // Get the back button element
+
+        // Set initial index
+        let currentIndex = 0;
+        let images = []; // Define images array
+
+        // Function to show only the current image
+        function showCurrentImage() {
+            const currentImage = images[currentIndex];
+            imageDisplay.src = currentImage;
+            imageDisplay.style.display = 'block';
+            imageDisplay2.style.display = 'none';
+            imageDisplay3.style.display = 'none';
+            imageDisplay4.style.display = 'none';
+            imageDisplay5.style.display = 'none';
+            imageDisplay6.style.display = 'none';
+            // Hide all image texts
+            imageText1.style.display = 'none';
+            imageText2.style.display = 'none';
+            imageText3.style.display = 'none';
+            imageText4.style.display = 'none';
+            imageText5.style.display = 'none';
+            imageText6.style.display = 'none';
+            // Show text corresponding to the current image
+            if (currentIndex === 0) {
+                imageText1.style.display = 'block';
+            } else if (currentIndex === 1) {
+                imageText2.style.display = 'block';
+            } else if (currentIndex === 2) {
+                imageText3.style.display = 'block';
+            } else if (currentIndex === 3) {
+                imageText4.style.display = 'block';
+            } else if (currentIndex === 4) {
+                imageText5.style.display = 'block';
+            } else if (currentIndex === 5) {
+                imageText6.style.display = 'block';
+            }
+        }
+
+        // Function to update the image source based on the current index
+        function updateImage() {
+            showCurrentImage();
+        }
+
+        // Function to load images based on query parameter
+        function loadImages() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const imageParam = urlParams.get('image');
+            switch (imageParam) {
+                case 'image1':
+                    images = [
+                        'images/pressured.png',
+                        'images/pressuredcu2.png',
+                        'images/pleading.png',
+                        'images/pleadingcu2.png',
+                        'images/polarized.png',
+                        'images/polarizedcu1.png'
+                    ];
+                    break;
+                case 'image2':
+                    images = [
+                        'images/kittencu4.png',
+                        'images/kittencu2.png',
+                        'images/kittencu5.png',
+                        
+                    ];
+                break;
+                        case 'image3':
+                        images = [
+                            'images/fishercu1.png',
+                            'images/fishercu2.png',
+                            'images/fishercu3.png',
+                            
+                        ];
+                        break;
+                        case 'image4':
+                        images = [
+                            'images/embracingcu1.png',
+                            'images/embracingcu2.png',
+                            'images/emrbacingcu3.png',
+                            
+                        ];
+                        break;
+                        case 'image5':
+                        images = [
+                            'images/longingcu1.png',
+                            'images/longingcu2.png',
+                            'images/longingcu3.png',
+                            
+                        ];
+                        break;
+                        case 'image6':
+                        images = [
+                            'images/fallingcu1.png',
+                            'images/fallingcu2.png',
+                            'images/fallingcu3.png',
+                            
+                        ];
+                        break;
+                        case 'image7':
+                        images = [
+                            'images/graspingcu1.png',
+                            'images/graspingcu2.png',
+                            'images/graspingcu3.png',
+                            
+                        ];
+                        break;
+                        case 'image8':
+                        images = [
+                            'images/mellowcu1.png',
+                            'images/mellowcu2.png',
+                            'images/mellowcu3.png',
+                            
+                        ];
+                        break;
+                        case 'image9':
+                        images = [
+                            'images/fox2.png',
+                            'images/foxcu1.png',
+                            'images/foxcu2.png',
+                            'images/foxcu3.png',
+                            
+                        ];
+            
+                    currentIndex = 0; // Reset index when loading new images
+                    break;
+        
+             
+                // Add more cases for additional image sets if needed
+                default:
+                    images = [];
+            }
+            updateImage(); // Display the first image
+        }
+
+        // Event listener for the previous button
+        prevBtn.addEventListener('click', () => {
+            currentIndex = (currentIndex - 1 + images.length) % images.length;
+            updateImage();
+        });
+
+        // Event listener for the next button
+        nextBtn.addEventListener('click', () => {
+            currentIndex = (currentIndex + 1) % images.length;
+            updateImage();
+        });
+
+        // Event listener for the back button
+        backBtn.addEventListener('click', () => {
+            window.location.href = 'works.html'; // Navigate back to works.html
+        });
+
+        // Load images based on query parameter when the page loads
+        loadImages();
+
+        // Add click event listener to each image on the details page
+        const detailImages = document.querySelectorAll('.main-image img');
+        detailImages.forEach((image, index) => {
+            image.classList.add('detail-image'); // Add class detail-image to each image
+            image.addEventListener('click', () => {
+                window.location.href = `works.html?image=${index}`; // Navigate to works.html with image index
+            });
+        });
+    </script>
+</body>
+</html>
